@@ -176,41 +176,66 @@ async function searchWorldwideFood(foodName, qty = 100) {
     const fiber =
       (getNutrient("Fiber, total dietary") * factor).toFixed(1);
 
-    resultBox.innerHTML = `
-      <div class="fcheck__head">
-        <div>
-          <h3>${food.description}</h3>
-          <span>${qty} g</span>
-        </div>
+   const tbody =
+document.getElementById("foodTableBody");
 
-        <div class="fcheck__kcal">
-          <b>${calories}</b>
-          <span>kcal</span>
-        </div>
-      </div>
+const row = document.createElement("tr");
 
-      <div class="fcheck__macros">
-        <div class="m">
-          <b>${protein}g</b>
-          <span>Protein</span>
-        </div>
+row.innerHTML = `
+<td>${food.description}</td>
+<td>${qty} g</td>
+<td>${calories}</td>
+<td>${protein} g</td>
+<td>${carbs} g</td>
+<td>${fat} g</td>
+<td>
+<button class="remove-btn">
+❌
+</button>
+</td>
+`;
 
-        <div class="m">
-          <b>${carbs}g</b>
-          <span>Carbs</span>
-        </div>
+tbody.appendChild(row);
 
-        <div class="m">
-          <b>${fat}g</b>
-          <span>Fat</span>
-        </div>
+totalCalories += Number(calories);
+totalProtein += Number(protein);
+totalCarbs += Number(carbs);
+totalFat += Number(fat);
 
-        <div class="m">
-          <b>${fiber}g</b>
-          <span>Fibre</span>
-        </div>
-      </div>
-    `;
+document.getElementById("totalCalories").textContent =
+  totalCalories.toFixed(1);
+
+document.getElementById("totalProtein").textContent =
+  totalProtein.toFixed(1);
+
+document.getElementById("totalCarbs").textContent =
+  totalCarbs.toFixed(1);
+
+document.getElementById("totalFat").textContent =
+  totalFat.toFixed(1);
+
+row.querySelector(".remove-btn")
+.addEventListener("click", () => {
+
+  totalCalories -= Number(calories);
+  totalProtein -= Number(protein);
+  totalCarbs -= Number(carbs);
+  totalFat -= Number(fat);
+
+  document.getElementById("totalCalories").textContent =
+    totalCalories.toFixed(1);
+
+  document.getElementById("totalProtein").textContent =
+    totalProtein.toFixed(1);
+
+  document.getElementById("totalCarbs").textContent =
+    totalCarbs.toFixed(1);
+
+  document.getElementById("totalFat").textContent =
+    totalFat.toFixed(1);
+
+  row.remove();
+});
   } catch (error) {
     console.error(error);
 
