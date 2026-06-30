@@ -129,7 +129,7 @@ input,select,button{font-family:inherit;}
   pointer-events:none;
 }
 .hero__content{ position:relative; z-index:2; max-width:760px; }
-.hero__crest{ width:140px; margin:0 auto 1.6rem; filter: drop-shadow(0 8px 30px rgba(192,57,43,.45)); }
+.hero__crest{ width:500px; margin:0 auto 1.6rem; filter: drop-shadow(0 8px 30px rgba(192,57,43,.45)); }
 .hero__eyebrow{
   font-size:.68rem; letter-spacing:.35em; color:var(--steel-dim); text-transform:uppercase; margin-bottom:1.2rem;
 }
