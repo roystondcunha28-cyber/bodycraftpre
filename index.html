@@ -12,6 +12,29 @@
 </head>
 <body>
 
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__panel preloader__panel--left"></div>
+  <div class="preloader__panel preloader__panel--right"></div>
+  <div class="preloader__core">
+    <div class="preloader__plate"></div>
+    <div class="preloader__word">
+      <span>B</span><span>O</span><span>D</span><span>Y</span><span class="gap"></span><span>C</span><span>R</span><span>A</span><span>F</span><span>T</span>
+    </div>
+    <div class="preloader__track"><div class="preloader__fill" id="preloaderFill"></div></div>
+    <div class="preloader__meta">
+      <span class="preloader__pct" id="preloaderPct">0%</span>
+      <span class="preloader__label">PREPARING YOUR SESSION</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ AMBIENT CURSOR GLOW (desktop only, decorative) ============ -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav">
   <div class="nav__brand">
@@ -26,59 +49,102 @@
     <li><a href="#bmi">BMI Calculator</a></li>
     <li><a href="#calculator">Diet Calculator</a></li>
   </ul>
-  <a href="#calculator" class="nav__cta">Calculate My Diet</a>
-  <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="#calculator" class="nav__cta btn-magnetic">Calculate My Diet</a>
+  <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="nav__mobile-overlay" id="navOverlay"></div>
 <div class="nav__mobile" id="navMobile">
   <a href="#foodcheck">Food Checker</a>
+  <a href="#bmi">BMI Calculator</a>
   <a href="#calculator">Diet Calculator</a>
 </div>
 
 <!-- ============ HERO ============ -->
-<header class="hero">
-  <div class="hero__grain"></div>
-  <div class="hero__glow"></div>
-  <div class="hero__content">
-    <img src="logo.png" alt="Body Craft Unisex Gym crest" class="hero__crest" />
-    <p class="hero__eyebrow">GURUPURA-VAMANJOOR.MANGALORE, KARNATAKA</p>
-    <h1 class="hero__title">BODY CRAFT<br><span> GYM</span></h1>
-    <p class="hero__tagline">The Art of Health & Fitness</p>
-    <div class="hero__divider"><span></span>presents<span></span></div>
-    <h2 class="hero__platform">Nutri<em>Track</em> Pro</h2>
-    <p class="hero__platformsub"> +91 80955 882021</p>
+<header class="hero" id="hero">
+  <div class="hero__mesh" aria-hidden="true"></div>
+  <div class="hero__grain" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
+  <div class="hero__floorline" aria-hidden="true"></div>
 
-    <div class="hero__trainer">
-  <div class="hero__trainer-text">
-    <span class="label">Head Trainer</span>
-    <span class="name">Mr. Prashanth Suvarna</span>
+  <div class="hero__inner">
+
+    <div class="hero__text">
+      <p class="hero__eyebrow reveal-line"><span>GURUPURA · VAMANJOOR, MANGALORE, KARNATAKA</span></p>
+
+      <h1 class="hero__title" id="heroTitle">
+        <span class="hero__title-line" data-split>BODY CRAFT</span>
+        <span class="hero__title-line hero__title-line--accent" data-split>GYM</span>
+      </h1>
+
+      <p class="hero__tagline reveal-fade" style="--d:5">The Art of Health &amp; Fitness</p>
+
+      <div class="hero__divider reveal-fade" style="--d:6"><span></span>presents<span></span></div>
+
+      <h2 class="hero__platform reveal-fade" style="--d:7">Nutri<em>Track</em> Pro</h2>
+      <p class="hero__platformsub reveal-fade" style="--d:8">+91 80955 882021</p>
+
+      <div class="hero__credits reveal-fade" style="--d:9">
+        <div class="hero__trainer">
+          <div class="hero__trainer-text">
+            <span class="label">Head Trainer</span>
+            <span class="name">Mr. Prashanth Suvarna</span>
+          </div>
+        </div>
+
+        <div class="hero__trainer">
+          <div class="hero__trainer-text">
+            <span class="label">Web Developer</span>
+            <span class="name">royston.dev</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__actions reveal-fade" style="--d:10">
+        <a href="#calculator" class="btn btn--primary btn-magnetic">Calculate My Diet <span class="btn__arrow">→</span></a>
+        <a href="https://www.bing.com/ck/a?!&&p=1c1c9fa8ec5ac2cbf4d25913f1568c405d6014ea1a14ffa67f2c7edd3d33bf64JmltdHM9MTc4Mjc3NzYwMA&ptn=3&ver=2&hsh=4&fclid=2c0dfc9b-65e4-642c-0c04-ea2664d265f1&psq=BODY+CRAFT+GYM+KAIKAMBA&u=a1aHR0cHM6Ly93d3cuanVzdGRpYWwuY29tL01hbmdhbG9yZS9Cb2R5LUNyYWZ0LVVuaXNleC1HeW0tS2Fpa2FtYmEvMDgyNFBYODI0LVg4MjQtMjMwODMwMjA1NDIwLUg1TDVfQlpERVQ" class="btn btn--ghost btn-magnetic">Meet the Gym</a>
+      </div>
+    </div>
+
+    <div class="hero__visual reveal-fade" style="--d:4">
+      <div class="hero__visual-glow"></div>
+      <div class="hero__visual-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="hero__visual-tilt" id="heroTilt">
+        <img src="trainer.png" alt="Body Craft head trainer demonstrating peak physical conditioning" class="hero__visual-img" />
+      </div>
+      <div class="hero__visual-badge hero__visual-badge--top">
+        <strong>NutriTrack</strong><span>AI-assisted tracking</span>
+      </div>
+      <div class="hero__visual-badge hero__visual-badge--bottom">
+        <strong>Live</strong><span>Diet engine running</span>
+      </div>
+    </div>
+
   </div>
-</div>
 
-<div class="hero__trainer">
-  <div class="hero__trainer-text">
-    <span class="label">Web Developer</span>
-    <span class="name">royston.dev</span>
-  </div>
-</div>
-
-    <div class="hero__actions">
-      <a href="#calculator" class="btn btn--primary">Calculate My Diet →</a>
-      <a href="https://www.bing.com/ck/a?!&&p=1c1c9fa8ec5ac2cbf4d25913f1568c405d6014ea1a14ffa67f2c7edd3d33bf64JmltdHM9MTc4Mjc3NzYwMA&ptn=3&ver=2&hsh=4&fclid=2c0dfc9b-65e4-642c-0c04-ea2664d265f1&psq=BODY+CRAFT+GYM+KAIKAMBA&u=a1aHR0cHM6Ly93d3cuanVzdGRpYWwuY29tL01hbmdhbG9yZS9Cb2R5LUNyYWZ0LVVuaXNleC1HeW0tS2Fpa2FtYmEvMDgyNFBYODI0LVg4MjQtMjMwODMwMjA1NDIwLUg1TDVfQlpERVQ" class="btn btn--ghost">Meet the Gym</a>
+  <div class="hero__marquee" aria-hidden="true">
+    <div class="hero__marquee-track">
+      <span>STRENGTH</span><span>•</span><span>NUTRITION</span><span>•</span><span>DISCIPLINE</span><span>•</span><span>TRANSFORMATION</span><span>•</span>
+      <span>STRENGTH</span><span>•</span><span>NUTRITION</span><span>•</span><span>DISCIPLINE</span><span>•</span><span>TRANSFORMATION</span><span>•</span>
     </div>
   </div>
-  <div class="hero__scroll">Scroll to begin</div>
+
+  <div class="hero__scroll">
+    <span class="hero__scroll-text">Scroll to begin</span>
+    <span class="hero__scroll-line"><i></i></span>
+  </div>
 </header>
 
 <!-- ============ SINGLE FOOD NUTRITION CHECKER ============ -->
 <section class="section section--foodcheck" id="foodcheck">
-  <div class="section__head">
+  <div class="section__head reveal-up">
     <span class="kicker">01 — Quick Check</span>
     <h2>Type Any Food, Get Its Full Nutrition</h2>
     <p>Enter a food item and quantity to see calories, protein, carbs, fat and the full micronutrient panel instantly.</p>
   </div>
 
   <div class="fcheck">
-    <form class="fcheck__form" id="fcheckForm" autocomplete="off">
+    <form class="fcheck__form tilt-card reveal-up" id="fcheckForm" autocomplete="off" style="--d:1">
       <div class="fcheck__inputwrap">
         <input type="text" id="fcheckInput" placeholder="Type a food " />
       </div>
@@ -91,10 +157,11 @@
   <option value="g">grams</option>
   <option value="serving">servings</option>
 </select>
-      <button type="submit" class="btn btn--primary">Check Nutrition</button>
+      <button type="submit" class="btn btn--primary btn-magnetic">Check Nutrition</button>
     </form>
-     <div class="fcheck__result" id="fcheckResult">
+     <div class="fcheck__result tilt-card reveal-up" id="fcheckResult" style="--d:2">
        <div id="searchMsg"></div>
+  <div class="table-scroll">
   <table id="foodTable">
     <thead>
      <tr>
@@ -109,6 +176,7 @@
     </thead>
     <tbody id="foodTableBody"></tbody>
   </table>
+  </div>
 
  <div class="food-total">
   <h3>Total Calories:
@@ -130,11 +198,12 @@
     </div>
   </div>
 </section>
+
 <section class="section" id="bmi">
 
-  <div class="section__head">
+  <div class="section__head reveal-up">
     <span class="kicker">
-      02 — BMI Calculator
+      02 — Body Metrics
     </span>
 
     <h2>Calculate Your BMI</h2>
@@ -143,7 +212,7 @@
   <div class="calc">
 
     <form id="bmiForm"
-          class="calc__form">
+          class="calc__form tilt-card reveal-up" style="--d:1">
 
       <label>
         Height (cm)
@@ -160,7 +229,7 @@
       </label>
 
       <button
-        class="btn btn--primary"
+        class="btn btn--primary btn-magnetic"
         type="submit">
         Calculate BMI
       </button>
@@ -168,8 +237,8 @@
     </form>
 
     <div
-      class="calc__result"
-      id="bmiResult">
+      class="calc__result tilt-card reveal-up"
+      id="bmiResult" style="--d:2">
 
       <div class="calc__placeholder">
         Enter height and weight.
@@ -182,13 +251,13 @@
 </section>
 <!-- ============ DIET CALCULATOR ============ -->
 <section class="section section--calc" id="calculator">
-  <div class="section__head">
-    <span class="kicker">02 — Daily Target</span>
+  <div class="section__head reveal-up">
+    <span class="kicker">03 — Daily Target</span>
     <h2>Your Diet, Calculated Properly</h2>
   </div>
 
   <div class="calc">
-    <form class="calc__form" id="calcForm">
+    <form class="calc__form tilt-card reveal-up" id="calcForm" style="--d:1">
       <div class="calc__row">
         <label>Gender
           <select name="gender">
@@ -224,10 +293,10 @@
           <option value="gain">Muscle Gain</option>
         </select>
       </label>
-      <button type="submit" class="btn btn--primary calc__submit">Calculate</button>
+      <button type="submit" class="btn btn--primary calc__submit btn-magnetic">Calculate</button>
     </form>
     
-    <div class="calc__result" id="calcResult">
+    <div class="calc__result tilt-card reveal-up" id="calcResult" style="--d:2">
       <div class="calc__placeholder">
         <p>Fill the form and hit <strong>Calculate</strong> — your daily calorie target, macro split, and water/fibre targets will appear here.</p>
       </div>
@@ -237,6 +306,7 @@
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
+  <div class="footer__glow" aria-hidden="true"></div>
   <div class="footer__top">
     <div class="footer__brand">
       <img src="logo.png" alt="Body Craft Gym" />
