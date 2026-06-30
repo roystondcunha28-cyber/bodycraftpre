@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NutriTrack Pro — Body Craft Unisex Gym | AI Nutrition &amp; Fitness Platform</title>
+<meta name="description" content="NutriTrack Pro — AI-assisted nutrition and fitness tracking platform for Body Craft Unisex Gym, Gurupura Kaikamba, Mangalore. Diet calculator, Indian food database, progress tracking, student-budget meal plans." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="nav__brand">
+    <img src="assets/logo.png" alt="Body Craft Gym" class="nav__logo" />
+    <div class="nav__brandtext">
+      <span class="nav__title">BODY CRAFT</span>
+      <span class="nav__sub">NutriTrack Pro</span>
+    </div>
+  </div>
+  <ul class="nav__links">
+    <li><a href="#foodcheck">Food Checker</a></li>
+    <li><a href="#calculator">Diet Calculator</a></li>
+    <li><a href="#foods">Food Database</a></li>
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#budget">Student Plans</a></li>
+    <li><a href="#gym">Gym</a></li>
+    <li><a href="#ai">AI Tools</a></li>
+  </ul>
+  <a href="#calculator" class="nav__cta">Calculate My Diet</a>
+  <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav__mobile" id="navMobile">
+  <a href="#foodcheck">Food Checker</a>
+  <a href="#calculator">Diet Calculator</a>
+  <a href="#foods">Food Database</a>
+  <a href="#progress">Progress</a>
+  <a href="#budget">Student Plans</a>
+  <a href="#gym">Gym</a>
+  <a href="#ai">AI Tools</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero__grain"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__content">
+    <img src="assets/logo.png" alt="Body Craft Unisex Gym crest" class="hero__crest" />
+    <p class="hero__eyebrow">GURUPURA · KAIKAMBA · MANGALORE · KARNATAKA</p>
+    <h1 class="hero__title">BODY CRAFT<br><span>UNISEX GYM</span></h1>
+    <p class="hero__tagline">The Art of Lifting</p>
+    <div class="hero__divider"><span></span>presents<span></span></div>
+    <h2 class="hero__platform">Nutri<em>Track</em> Pro</h2>
+    <p class="hero__platformsub">AI Nutrition &amp; Fitness Platform — built around the floor, not a spreadsheet.</p>
+
+    <div class="hero__trainer">
+      <div class="hero__trainer-ring"><span>P</span></div>
+      <div class="hero__trainer-text">
+        <span class="label">Head Trainer</span>
+        <span class="name">Mr. Prashanth</span>
+      </div>
+    </div>
+
+    <div class="hero__actions">
+      <a href="#calculator" class="btn btn--primary">Calculate My Diet →</a>
+      <a href="#gym" class="btn btn--ghost">Meet the Gym</a>
+    </div>
+  </div>
+  <div class="hero__scroll">Scroll to begin</div>
+</header>
+
+<!-- ============ SINGLE FOOD NUTRITION CHECKER ============ -->
+<section class="section section--foodcheck" id="foodcheck">
+  <div class="section__head">
+    <span class="kicker">01 — Quick Check</span>
+    <h2>Type Any Food, Get Its Full Nutrition</h2>
+    <p>Enter a food item and quantity to see calories, protein, carbs, fat and the full micronutrient panel instantly.</p>
+  </div>
+
+  <div class="fcheck">
+    <form class="fcheck__form" id="fcheckForm" autocomplete="off">
+      <div class="fcheck__inputwrap">
+        <input type="text" id="fcheckInput" placeholder="Type a food e.g. paneer, ragi, banana, prawns…" />
+        <div class="fcheck__suggest" id="fcheckSuggest"></div>
+      </div>
+      <input type="number" id="fcheckQty" min="1" value="100" />
+      <select id="fcheckUnit">
+        <option value="g">grams</option>
+        <option value="serving">servings</option>
+      </select>
+      <button type="submit" class="btn btn--primary">Check Nutrition</button>
+    </form>
+
+    <div class="fcheck__result" id="fcheckResult">
+      <p class="fcheck__placeholder">Search for a food above (try "egg", "rice", "ragi" or "mackerel") to see its full nutrition breakdown here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIET CALCULATOR ============ -->
+<section class="section section--calc" id="calculator">
+  <div class="section__head">
+    <span class="kicker">02 — Daily Target</span>
+    <h2>Your Diet, Calculated Properly</h2>
+    <p>Mifflin–St Jeor BMR, activity-adjusted TDEE, and goal-based macro split — the same maths Mr. Prashanth uses on the floor, instant in your browser.</p>
+  </div>
+
+  <div class="calc">
+    <form class="calc__form" id="calcForm">
+      <div class="calc__row">
+        <label>Gender
+          <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+        <label>Age (years)
+          <input type="number" name="age" min="10" max="90" value="24" required />
+        </label>
+      </div>
+      <div class="calc__row">
+        <label>Height (cm)
+          <input type="number" name="height" min="100" max="230" value="170" required />
+        </label>
+        <label>Weight (kg)
+          <input type="number" name="weight" min="30" max="220" value="68" step="0.1" required />
+        </label>
+      </div>
+      <label>Activity Level
+        <select name="activity">
+          <option value="1.2">Sedentary — desk job, no training</option>
+          <option value="1.375">Light — trains 1–3 days/week</option>
+          <option value="1.55" selected>Moderate — trains 4–5 days/week</option>
+          <option value="1.725">Heavy — trains 6–7 days/week</option>
+          <option value="1.9">Athlete — twice-a-day training</option>
+        </select>
+      </label>
+      <label>Goal
+        <select name="goal">
+          <option value="lose">Fat Loss</option>
+          <option value="maintain" selected>Maintain</option>
+          <option value="gain">Muscle Gain</option>
+        </select>
+      </label>
+      <button type="submit" class="btn btn--primary calc__submit">Calculate</button>
+    </form>
+
+    <div class="calc__result" id="calcResult">
+      <div class="calc__placeholder">
+        <p>Fill the form and hit <strong>Calculate</strong> — your daily calorie target, macro split, and water/fibre targets will appear here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOD DATABASE ============ -->
+<section class="section section--foods" id="foods">
+  <div class="section__head">
+    <span class="kicker">03 — Food Database</span>
+    <h2>Search Any Food, See Everything In It</h2>
+    <p>Indian staples, fruits, vegetables, dairy, seafood, chicken, eggs, rice, millets &amp; protein sources — calories through to Vitamin B12.</p>
+  </div>
+
+  <div class="foods__controls">
+    <input type="search" id="foodSearch" placeholder="Search e.g. ragi, paneer, banana, egg, prawns…" />
+    <div class="foods__filters" id="foodFilters"></div>
+  </div>
+
+  <div class="foods__grid" id="foodGrid"></div>
+  <p class="foods__empty" id="foodEmpty" hidden>No matching food. Try "rice", "dal", "millet" or "fish".</p>
+</section>
+
+<!-- ============ PROGRESS TRACKING ============ -->
+<section class="section section--progress" id="progress">
+  <div class="section__head">
+    <span class="kicker">04 — Progress Tracking</span>
+    <h2>Log It Once, See The Trend Forever</h2>
+    <p>Stored privately in your browser — weight, body measurements, calories, water, sleep and habits, all charted automatically.</p>
+  </div>
+
+  <div class="progress__layout">
+    <form class="progress__form" id="logForm">
+      <h3>Today's Log</h3>
+      <div class="calc__row">
+        <label>Weight (kg)<input type="number" step="0.1" name="weight" placeholder="68.4" /></label>
+        <label>Waist (cm)<input type="number" step="0.1" name="waist" placeholder="82" /></label>
+      </div>
+      <div class="calc__row">
+        <label>Calories Consumed<input type="number" name="calIn" placeholder="2200" /></label>
+        <label>Calories Burned<input type="number" name="calOut" placeholder="450" /></label>
+      </div>
+      <div class="calc__row">
+        <label>Water (litres)<input type="number" step="0.1" name="water" placeholder="2.5" /></label>
+        <label>Sleep (hours)<input type="number" step="0.1" name="sleep" placeholder="7" /></label>
+      </div>
+      <div class="progress__habits">
+        <span>Habits done today</span>
+        <div class="progress__habitchips">
+          <label><input type="checkbox" name="habit" value="Trained" /> Trained</label>
+          <label><input type="checkbox" name="habit" value="Protein target" /> Protein target</label>
+          <label><input type="checkbox" name="habit" value="No sugar" /> No sugar</label>
+          <label><input type="checkbox" name="habit" value="Stretched" /> Stretched</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn--primary">Save Today's Entry</button>
+      <button type="button" class="btn btn--ghost btn--small" id="clearLogs">Clear all data</button>
+    </form>
+
+    <div class="progress__charts">
+      <div class="chart-card">
+        <h4>Weight Trend (kg)</h4>
+        <canvas id="chartWeight" height="160"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>Calories In vs Burned</h4>
+        <canvas id="chartCal" height="160"></canvas>
+      </div>
+      <div class="chart-card chart-card--wide">
+        <h4>Weekly Dashboard</h4>
+        <div class="dashboard" id="weeklyDash"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STUDENT BUDGET ============ -->
+<section class="section section--budget" id="budget">
+  <div class="section__head">
+    <span class="kicker">05 — For Students</span>
+    <h2>Eat Right On A Student's Budget</h2>
+    <p>Real Mangalore-priced, high-protein Indian meal plans built for hostel kitchens and tight pockets — no imported supplements required.</p>
+  </div>
+
+  <div class="budget__tabs" id="budgetTabs"></div>
+  <div class="budget__content" id="budgetContent"></div>
+</section>
+
+<!-- ============ GYM SECTION ============ -->
+<section class="section section--gym" id="gym">
+  <div class="section__head">
+    <span class="kicker">06 — The Gym</span>
+    <h2>Workout Plans &amp; Exercise Library</h2>
+    <p>Programs curated by Mr. Prashanth, indexed by goal — training calendar and personal records included.</p>
+  </div>
+
+  <div class="gym__plans" id="gymPlans"></div>
+
+  <div class="gym__sub">
+    <div class="pr-card">
+      <h3>Personal Records</h3>
+      <form id="prForm" class="pr-form">
+        <input type="text" name="lift" placeholder="Lift e.g. Bench Press" required />
+        <input type="number" name="kg" placeholder="kg" required />
+        <button class="btn btn--primary btn--small" type="submit">Add PR</button>
+      </form>
+      <ul id="prList" class="pr-list"></ul>
+    </div>
+    <div class="cal-card">
+      <h3>Training Calendar</h3>
+      <div class="cal-grid" id="calGrid"></div>
+      <p class="cal-hint">Tap a day to mark it as a training day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI FEATURES ============ -->
+<section class="section section--ai" id="ai">
+  <div class="section__head">
+    <span class="kicker">07 — AI &amp; Premium</span>
+    <h2>Where The Platform Is Headed</h2>
+    <p>The calculator, database, and tracker above are fully live. These connect to an AI/backend layer in the next build phase.</p>
+  </div>
+  <div class="roadmap" id="roadmap"></div>
+</section>
+
+<!-- ============ ADMIN TEASER ============ -->
+<section class="section section--admin">
+  <div class="admin-teaser">
+    <div>
+      <span class="kicker">08 — Admin Panel</span>
+      <h2>One Dashboard For Trainers &amp; Dietitians</h2>
+      <p>User management, dietitian &amp; gym-trainer management, member analytics, notifications and content management — scaffolded and ready to wire up to a backend (Firebase/Supabase or a custom API).</p>
+    </div>
+    <div class="admin-grid">
+      <div class="admin-tile">Dashboard</div>
+      <div class="admin-tile">User Mgmt</div>
+      <div class="admin-tile">Dietitian Mgmt</div>
+      <div class="admin-tile">Trainer Mgmt</div>
+      <div class="admin-tile">Analytics</div>
+      <div class="admin-tile">Notifications</div>
+      <div class="admin-tile">Content Mgmt</div>
+      <div class="admin-tile">Reports</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/logo.png" alt="Body Craft Gym" />
+      <div>
+        <strong>BODY CRAFT UNISEX GYM</strong>
+        <span>The Art of Lifting</span>
+      </div>
+    </div>
+    <div class="footer__info">
+      <p>📍 Gurupura, Kaikamba, Mangalore, Karnataka</p>
+      <p>👤 Head Trainer — Mr. Prashanth</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Body Craft Unisex Gym · NutriTrack Pro</span>
+    <span>Web developed by <strong>Royston J Dcunha</strong></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
