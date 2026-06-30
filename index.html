@@ -22,6 +22,7 @@
     </div>
   </div>
   <ul class="nav__links">
+    <li><a href="#foodcheck">Food Checker</a></li>
     <li><a href="#calculator">Diet Calculator</a></li>
     <li><a href="#foods">Food Database</a></li>
     <li><a href="#progress">Progress</a></li>
@@ -33,6 +34,7 @@
   <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav__mobile" id="navMobile">
+  <a href="#foodcheck">Food Checker</a>
   <a href="#calculator">Diet Calculator</a>
   <a href="#foods">Food Database</a>
   <a href="#progress">Progress</a>
@@ -70,10 +72,38 @@
   <div class="hero__scroll">Scroll to begin</div>
 </header>
 
+<!-- ============ SINGLE FOOD NUTRITION CHECKER ============ -->
+<section class="section section--foodcheck" id="foodcheck">
+  <div class="section__head">
+    <span class="kicker">01 — Quick Check</span>
+    <h2>Type Any Food, Get Its Full Nutrition</h2>
+    <p>Enter a food item and quantity to see calories, protein, carbs, fat and the full micronutrient panel instantly.</p>
+  </div>
+
+  <div class="fcheck">
+    <form class="fcheck__form" id="fcheckForm" autocomplete="off">
+      <div class="fcheck__inputwrap">
+        <input type="text" id="fcheckInput" placeholder="Type a food e.g. paneer, ragi, banana, prawns…" />
+        <div class="fcheck__suggest" id="fcheckSuggest"></div>
+      </div>
+      <input type="number" id="fcheckQty" min="1" value="100" />
+      <select id="fcheckUnit">
+        <option value="g">grams</option>
+        <option value="serving">servings</option>
+      </select>
+      <button type="submit" class="btn btn--primary">Check Nutrition</button>
+    </form>
+
+    <div class="fcheck__result" id="fcheckResult">
+      <p class="fcheck__placeholder">Search for a food above (try "egg", "rice", "ragi" or "mackerel") to see its full nutrition breakdown here.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ DIET CALCULATOR ============ -->
 <section class="section section--calc" id="calculator">
   <div class="section__head">
-    <span class="kicker">01 — Start Here</span>
+    <span class="kicker">02 — Daily Target</span>
     <h2>Your Diet, Calculated Properly</h2>
     <p>Mifflin–St Jeor BMR, activity-adjusted TDEE, and goal-based macro split — the same maths Mr. Prashanth uses on the floor, instant in your browser.</p>
   </div>
@@ -129,7 +159,7 @@
 <!-- ============ FOOD DATABASE ============ -->
 <section class="section section--foods" id="foods">
   <div class="section__head">
-    <span class="kicker">02 — Food Database</span>
+    <span class="kicker">03 — Food Database</span>
     <h2>Search Any Food, See Everything In It</h2>
     <p>Indian staples, fruits, vegetables, dairy, seafood, chicken, eggs, rice, millets &amp; protein sources — calories through to Vitamin B12.</p>
   </div>
@@ -146,7 +176,7 @@
 <!-- ============ PROGRESS TRACKING ============ -->
 <section class="section section--progress" id="progress">
   <div class="section__head">
-    <span class="kicker">03 — Progress Tracking</span>
+    <span class="kicker">04 — Progress Tracking</span>
     <h2>Log It Once, See The Trend Forever</h2>
     <p>Stored privately in your browser — weight, body measurements, calories, water, sleep and habits, all charted automatically.</p>
   </div>
@@ -199,7 +229,7 @@
 <!-- ============ STUDENT BUDGET ============ -->
 <section class="section section--budget" id="budget">
   <div class="section__head">
-    <span class="kicker">04 — For Students</span>
+    <span class="kicker">05 — For Students</span>
     <h2>Eat Right On A Student's Budget</h2>
     <p>Real Mangalore-priced, high-protein Indian meal plans built for hostel kitchens and tight pockets — no imported supplements required.</p>
   </div>
@@ -211,7 +241,7 @@
 <!-- ============ GYM SECTION ============ -->
 <section class="section section--gym" id="gym">
   <div class="section__head">
-    <span class="kicker">05 — The Gym</span>
+    <span class="kicker">06 — The Gym</span>
     <h2>Workout Plans &amp; Exercise Library</h2>
     <p>Programs curated by Mr. Prashanth, indexed by goal — training calendar and personal records included.</p>
   </div>
@@ -239,7 +269,7 @@
 <!-- ============ AI FEATURES ============ -->
 <section class="section section--ai" id="ai">
   <div class="section__head">
-    <span class="kicker">06 — AI &amp; Premium</span>
+    <span class="kicker">07 — AI &amp; Premium</span>
     <h2>Where The Platform Is Headed</h2>
     <p>The calculator, database, and tracker above are fully live. These connect to an AI/backend layer in the next build phase.</p>
   </div>
@@ -250,7 +280,7 @@
 <section class="section section--admin">
   <div class="admin-teaser">
     <div>
-      <span class="kicker">07 — Admin Panel</span>
+      <span class="kicker">08 — Admin Panel</span>
       <h2>One Dashboard For Trainers &amp; Dietitians</h2>
       <p>User management, dietitian &amp; gym-trainer management, member analytics, notifications and content management — scaffolded and ready to wire up to a backend (Firebase/Supabase or a custom API).</p>
     </div>
