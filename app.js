@@ -122,9 +122,11 @@ calcForm.dispatchEvent(new Event('submit'));
       return;
     }
 
-    resultBox.innerHTML =
-      "<p>Searching worldwide food database...</p>";
+  const searchMsg = document.getElementById("searchMsg");
 
+if (searchMsg) {
+  searchMsg.textContent = "Searching...";
+}
     searchWorldwideFood(foodName, qty);
   });
 })();
