@@ -128,7 +128,10 @@ calcForm.dispatchEvent(new Event('submit'));
     searchWorldwideFood(foodName, qty);
   });
 })();
-
+let totalCalories = 0;
+let totalProtein = 0;
+let totalCarbs = 0;
+let totalFat = 0;
 const USDA_API_KEY = "fzjGdwzTlXUAyv694c75YG84fWRcfuyX8EpXUFgT";
 
 async function searchWorldwideFood(foodName, qty = 100) {
