@@ -90,16 +90,18 @@
     </form>
 
      <div class="fcheck__result" id="fcheckResult">
+       <div id="searchMsg"></div>
   <table id="foodTable">
     <thead>
-      <tr>
-        <th>Food</th>
-        <th>Qty</th>
-        <th>Calories</th>
-        <th>Protein</th>
-        <th>Carbs</th>
-        <th>Fat</th>
-      </tr>
+     <tr>
+  <th>Food</th>
+  <th>Qty</th>
+  <th>Calories</th>
+  <th>Protein</th>
+  <th>Carbs</th>
+  <th>Fat</th>
+  <th>Remove</th>
+</tr>
     </thead>
     <tbody id="foodTableBody"></tbody>
   </table>
@@ -126,7 +128,56 @@
     </div>
   </div>
 </section>
+<section class="section" id="bmi">
 
+  <div class="section__head">
+    <span class="kicker">
+      02 — BMI Calculator
+    </span>
+
+    <h2>Calculate Your BMI</h2>
+  </div>
+
+  <div class="calc">
+
+    <form id="bmiForm"
+          class="calc__form">
+
+      <label>
+        Height (cm)
+        <input type="number"
+               id="bmiHeight"
+               required>
+      </label>
+
+      <label>
+        Weight (kg)
+        <input type="number"
+               id="bmiWeight"
+               required>
+      </label>
+
+      <button
+        class="btn btn--primary"
+        type="submit">
+        Calculate BMI
+      </button>
+
+    </form>
+
+    <div
+      class="calc__result"
+      id="bmiResult">
+
+      <div class="calc__placeholder">
+        Enter height and weight.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 <!-- ============ DIET CALCULATOR ============ -->
 <section class="section section--calc" id="calculator">
   <div class="section__head">
@@ -173,6 +224,8 @@
       </label>
       <button type="submit" class="btn btn--primary calc__submit">Calculate</button>
     </form>
+    
+    <div class="calc__result" id="calcResult">
       <div class="calc__placeholder">
         <p>Fill the form and hit <strong>Calculate</strong> — your daily calorie target, macro split, and water/fibre targets will appear here.</p>
       </div>
