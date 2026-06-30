@@ -78,7 +78,6 @@ calcResult.innerHTML = `
       <span>Water target: <strong>${water} L</strong></span>
       <span>Fibre target: <strong>${fiber} g</strong></span>
     </div>
-    <p class="result__note">Calculated via Mifflin–St Jeor BMR × activity multiplier. This is a personal estimate — Mr. Prashanth can fine-tune it during your in-person assessment at Body Craft.</p>
   `;
 });
 calcForm.dispatchEvent(new Event('submit'));
