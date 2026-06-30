@@ -315,3 +315,55 @@ input,select,button{font-family:inherit;}
   .fcheck__macros{ grid-template-columns:repeat(2,1fr); }
   .fcheck__micro{ grid-template-columns:1fr; }
 }
+.bmi-card{
+  margin-top:25px;
+  padding:20px;
+  background:var(--black-2);
+  border:1px solid var(--line);
+  text-align:center;
+}
+
+.bmi-card h3{
+  font-family:var(--f-head);
+  color:#fff;
+  margin-bottom:15px;
+}
+
+.bmi-number{
+  font-family:var(--f-display);
+  font-size:3rem;
+  color:var(--red-bright);
+}
+
+.bmi-status{
+  color:var(--steel);
+  font-size:1rem;
+  margin-bottom:20px;
+}
+
+.bmi-bar{
+  width:100%;
+  height:12px;
+  background:
+    linear-gradient(
+      to right,
+      #3498db 0%,
+      #2ecc71 25%,
+      #f1c40f 50%,
+      #e67e22 75%,
+      #e74c3c 100%
+    );
+  border-radius:20px;
+  position:relative;
+}
+
+.bmi-indicator{
+  width:18px;
+  height:18px;
+  background:white;
+  border-radius:50%;
+  position:absolute;
+  top:-3px;
+  left:0;
+  transition:0.5s;
+}
