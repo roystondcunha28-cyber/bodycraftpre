@@ -85,11 +85,13 @@
     type="number"
     id="fcheckQty"
     min="1"
-    value="100"
-    placeholder="Qty">
+    value="100">
+      <select id="fcheckUnit">
+  <option value="g">grams</option>
+  <option value="serving">servings</option>
+</select>
       <button type="submit" class="btn btn--primary">Check Nutrition</button>
     </form>
-
      <div class="fcheck__result" id="fcheckResult">
        <div id="searchMsg"></div>
   <table id="foodTable">
