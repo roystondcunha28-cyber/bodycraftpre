@@ -118,7 +118,8 @@ let totalCalories = 0;
 let totalProtein = 0;
 let totalCarbs = 0;
 let totalFat = 0;
-const USDA_API_KEY = "fzjGdwzTlXUAyv694c75YG84fWRcfuyX8EpXUFgT";
+const USDA_API_KEY =
+"fzjGdwzTlXUAyv694c75YG84fWRcfuyX8EpXUFgT";
 
 async function searchWorldwideFood(foodName, qty = 100) {
   const resultBox = document.getElementById("fcheckResult");
@@ -131,11 +132,10 @@ async function searchWorldwideFood(foodName, qty = 100) {
     const data = await response.json();
 
     if (!data.foods || data.foods.length === 0) {
-      resultBox.innerHTML =
-        `<p>No nutrition information found for "${foodName}".</p>`;
-      return;
-    }
-
+     const searchMsg = document.getElementById("searchMsg");
+searchMsg.textContent =
+  `No nutrition information found for "${foodName}".`;
+return;
     const food = data.foods[0];
 
     function getNutrient(name) {
@@ -222,11 +222,22 @@ row.querySelector(".remove-btn")
 
   row.remove();
 });
+     document.getElementById("fcheckInput").value = "";
+document.getElementById("fcheckQty").value = 100;
+     
+const searchMsg =
+document.getElementById("searchMsg");
+
+if (searchMsg) {
+  searchMsg.textContent = "";
+}
   } catch (error) {
     console.error(error);
 
-    resultBox.innerHTML =
-      "<p>Unable to fetch nutrition data.</p>";
+    const searchMsg = document.getElementById("searchMsg");
+searchMsg.textContent =
+  "Unable to fetch nutrition data.";
+return;
   }
 }
 const bmiForm =
