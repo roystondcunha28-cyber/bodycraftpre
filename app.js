@@ -91,6 +91,7 @@ calcForm.dispatchEvent(new Event('submit'));
 (function () {
   const input = document.getElementById("fcheckInput");
   const qtyInput = document.getElementById("fcheckQty");
+  const unitInput = document.getElementById("fcheckUnit");
   const resultBox = document.getElementById("fcheckResult");
   const form = document.getElementById("fcheckForm");
 
@@ -98,7 +99,11 @@ calcForm.dispatchEvent(new Event('submit'));
     e.preventDefault();
 
     const foodName = input.value.trim();
-    const qty = Number(qtyInput.value) || 100;
+   const qty =
+Number(qtyInput.value) || 100;
+
+const unit =
+unitInput.value;
 
     if (!foodName) {
       resultBox.innerHTML =
@@ -111,7 +116,7 @@ calcForm.dispatchEvent(new Event('submit'));
 if (searchMsg) {
   searchMsg.textContent = "Searching...";
 }
-    searchWorldwideFood(foodName, qty);
+    searchWorldwideFood(foodName, qty, unit);
   });
 })();
 let totalCalories = 0;
@@ -121,7 +126,12 @@ let totalFat = 0;
 const USDA_API_KEY =
 "fzjGdwzTlXUAyv694c75YG84fWRcfuyX8EpXUFgT";
 
-async function searchWorldwideFood(foodName, qty = 100) {
+async function searchWorldwideFood(
+  foodName,
+  qty = 100,
+  unit = "g"
+)
+{
   const resultBox = document.getElementById("fcheckResult");
 
   try {
@@ -146,8 +156,13 @@ return;
       return nutrient ? nutrient.value : 0;
     }
 
-    const factor = qty / 100;
+    let factor;
 
+if (unit === "g") {
+  factor = qty / 100;
+} else {
+  factor = qty;
+}
     const calories =
       (getNutrient("Energy") * factor).toFixed(1);
 
@@ -170,7 +185,7 @@ const row = document.createElement("tr");
 
 row.innerHTML = `
 <td>${food.description}</td>
-<td>${qty} g</td>
+<td>${qty} ${unit}</td>
 <td>${calories}</td>
 <td>${protein} g</td>
 <td>${carbs} g</td>
@@ -225,7 +240,7 @@ row.querySelector(".remove-btn")
 });
      document.getElementById("fcheckInput").value = "";
 document.getElementById("fcheckQty").value = 100;
-     
+document.getElementById("fcheckUnit").value = "g";
 const searchMsg =
 document.getElementById("searchMsg");
 
