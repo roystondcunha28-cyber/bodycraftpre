@@ -89,19 +89,28 @@
       <button type="submit" class="btn btn--primary">Check Nutrition</button>
     </form>
 
-    <div class="fcheck__result" id="fcheckResult">
-      <div class="bmi-card">
-  <h3>Your BMI</h3>
-  <div class="bmi-number">${bmi.toFixed(1)}</div>
-  <div class="bmi-status">${bmiStatus}</div>
+     <div class="fcheck__result" id="fcheckResult">
+  <table id="foodTable">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Qty</th>
+        <th>Calories</th>
+        <th>Protein</th>
+        <th>Carbs</th>
+        <th>Fat</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-  <div class="bmi-bar">
-    <div class="bmi-indicator"
-         style="left:calc(${bmiPos}% - 9px)">
-    </div>
+  <div class="food-total">
+    <h3>Total Calories:
+      <span id="totalCalories">0</span> kcal
+    </h3>
   </div>
 </div>
-      <p class="fcheck__placeholder">Search for a food above (try "egg", "rice", "ragi" or "mackerel") to see its full nutrition breakdown here.</p>
+      <p class="fcheck__placeholder">Search for a food above to see its full nutrition breakdown here.</p>
     </div>
   </div>
 </section>
