@@ -48,22 +48,6 @@ calcForm.addEventListener('submit', (e) => {
  const water = (weight * 0.035).toFixed(1);
 const fiber = goal === 'lose' ? 32 : 28;
 
-let bmi = weight / ((height / 100) ** 2);
-
-let bmiStatus = "";
-
-if (bmi < 18.5) {
-  bmiStatus = "Underweight";
-} else if (bmi < 25) {
-  bmiStatus = "Normal";
-} else if (bmi < 30) {
-  bmiStatus = "Overweight";
-} else {
-  bmiStatus = "Obese";
-}
-
-let bmiPos = Math.min((bmi / 40) * 100, 100);
-
 calcResult.innerHTML = `
     <div class="result__kcal">
       <div class="num">${Math.round(target)}</div>
@@ -244,4 +228,60 @@ row.querySelector(".remove-btn")
     resultBox.innerHTML =
       "<p>Unable to fetch nutrition data.</p>";
   }
+}
+const bmiForm =
+document.getElementById("bmiForm");
+
+const bmiResult =
+document.getElementById("bmiResult");
+
+if (bmiForm) {
+  bmiForm.addEventListener(
+    "submit",
+    (e) => {
+      e.preventDefault();
+
+      const h =
+        Number(
+          document.getElementById(
+            "bmiHeight"
+          ).value
+        );
+
+      const w =
+        Number(
+          document.getElementById(
+            "bmiWeight"
+          ).value
+        );
+
+      const bmi =
+        w / ((h / 100) ** 2);
+
+      let status = "";
+
+      if (bmi < 18.5)
+        status = "Underweight";
+      else if (bmi < 25)
+        status = "Normal";
+      else if (bmi < 30)
+        status = "Overweight";
+      else
+        status = "Obese";
+
+      bmiResult.innerHTML = `
+        <div class="bmi-card">
+          <h3>Your BMI</h3>
+
+          <div class="bmi-number">
+            ${bmi.toFixed(1)}
+          </div>
+
+          <div class="bmi-status">
+            ${status}
+          </div>
+        </div>
+      `;
+    }
+  );
 }
