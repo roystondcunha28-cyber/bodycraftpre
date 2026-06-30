@@ -136,6 +136,7 @@ async function searchWorldwideFood(foodName, qty = 100) {
 searchMsg.textContent =
   `No nutrition information found for "${foodName}".`;
 return;
+    }
     const food = data.foods[0];
 
     function getNutrient(name) {
